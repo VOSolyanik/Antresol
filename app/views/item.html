@@ -1,0 +1,34 @@
+<div class="product-gallery">
+	<div class="gallery-preview">	
+		<img ng-src="{{vm.ads.mainImgUrl}}" alt="{{vm.ads.item.title}}">
+	</div>
+	<ul class="gallery-list clearfix">
+		<li class="gallery-item" ng-class="{'active': vm.ads.mainImgUrl == img.url}" ng-click="vm.setImg(img.url)" ng-repeat="img in vm.ads.item.images">
+			<img ng-src="{{img.url}}" alt="{{img.image_id}}">
+		</li>
+	</ul>
+</div>
+<div class="product-description">
+	<h2 class="title">{{vm.ads.item.title}}</h2>
+	<div class="price">{{vm.ads.item.price}} UAH</div>
+	<p class="description-text">{{vm.ads.item.desc}}</p>
+	<div class="share-product">
+		<ul ng-social-buttons
+		     data-url="vm.url"
+		     data-title="vm.ads.item.title"
+		     data-description="vm.ads.item.desc"
+		     data-image="vm.ads.mainImgUrl">
+		    <li class="ng-social-facebook">Facebook</li>
+		    <li class="ng-social-twitter">Twit</li>
+		    <li class="ng-social-vk">Vkontakte</li>
+		    <li class="ng-social-pinterest">Pint it</li>
+		</ul>
+	</div>
+	<div class="product-seller clearfix">
+		<div class="seller-ava-wrapper">
+			<img ng-src="{{vm.ads.item.user.avatar}}" alt="{{vm.ads.item.user.last_name}} {{vm.ads.item.user.first_name}}">
+		</div>
+		<span class="seller-name">{{vm.ads.item.user.first_name}} {{vm.ads.item.user.last_name}}</span>
+	</div>
+	<a href="https://itunes.apple.com/app/id926873860" class="btn btn-green rigth">Хочу</a>
+</div>
